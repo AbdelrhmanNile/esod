@@ -1,13 +1,13 @@
 # train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
-train: ./TinyPerson/split/trainval.txt  # 4.5k images
-val: ./TinyPerson/split/test.txt  # 1.5k images
-test: ./TinyPerson/split/test.txt  # 
+train: /kaggle/working/train.txt  # 4.5k images
+val: /kaggle/working/test.txt  # 1.5k images
+test: /kaggle/working/test.txt  # 
 
 # number of classes
 nc: 1
 
 # class names
-names: ['person']
+names: ['object']
 
 # Print classes
 # with open('data/coco.yaml') as f:
