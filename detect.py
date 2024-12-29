@@ -74,6 +74,9 @@ def detect(opt):
         # Inference
         t1 = time_synchronized()
         (pred, p_det), masks = model(img, augment=opt.augment)
+        print(p_det)
+        print("####")
+        print(p_det[1])
         masks = masks[0].sigmoid()
         if opt.view_center:
             masks = ((masks == F.max_pool2d(masks, 3, stride=1, padding=1)) & (masks > 0.3)).float()
