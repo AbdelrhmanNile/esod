@@ -41,6 +41,7 @@ def detect(opt):
     stride = int(model.stride.max())  # model stride
     imgsz = check_img_size(imgsz, s=stride)  # check img_size
     names = model.module.names if hasattr(model, 'module') else model.names  # get class names
+    print(names)
     if half:
         model.half()  # to FP16
 
@@ -74,8 +75,13 @@ def detect(opt):
         # Inference
         t1 = time_synchronized()
         (pred, p_det), masks = model(img, augment=opt.augment)
+        print("mask")
+        print(mask)
+        print("pred")
+        print(pred)
+        print("p det")
         print(p_det)
-        print("####")
+        print("det 1")
         print(p_det[1])
         masks = masks[0].sigmoid()
         if opt.view_center:
