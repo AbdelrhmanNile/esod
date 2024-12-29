@@ -76,7 +76,7 @@ def detect(opt):
         t1 = time_synchronized()
         (pred, p_det), masks = model(img, augment=opt.augment)
         print("mask")
-        print(mask)
+        print(masks)
         print("pred")
         print(pred)
         print("p det")
